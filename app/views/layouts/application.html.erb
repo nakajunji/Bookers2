@@ -9,7 +9,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="padding-top: 50px;">
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <span class="", style="font-size: 20px; color: white;">Bookers</span>
+          </div>
+          <ul class="nav navbar-nav navbar-right" style="color: white;">
+            <% if user_signed_in? %>
+              <li><%= link_to home_top_path do %><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home <% end %></li>
+              <li>Users</li>
+              <li>Books</li>
+              <li><%= link_to destroy_user_session_path do %><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> logout<% end %></li>
+            <% else %>
+              <li><%= link_to home_top_path do %><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home <% end %></li>
+              <li><%= link_to home_about_path do %><span class="glyphicon glyphicon-link" aria-hidden="true"></span> About <% end %></li>
+              <li><%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> sign up <% end %></li>
+              <li><%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> login <% end %></li>
+            <% end %>
+          </ul>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-lg-offset-9">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
