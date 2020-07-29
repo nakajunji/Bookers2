@@ -1,2 +1,31 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="top-message col-lg-6 col-lg-offset-3">
+			<h1>
+				welcome to
+				<span class="glyphicon glyphicon-book" aria-hidden="true"><strong>Bookers</strong>  !!</span>
+			</h1>
+			<p>
+				In  <span class="glyphicon glyphicon-book" aria-hidden="true"><strong>Bookers</strong>,
+			</p>
+			<p>
+				you can share and exchange your opinions , inpressions , and emotions
+			</p>
+			<p>
+				about various books!
+			</p>
+			<div class="btn-wrapper">
+				<div class="row">
+					<p class="col-lg-10 col-lg-offset-1" style="margin-bottom: 0;">
+						<%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-block" %>
+					</p>
+				</div>
+				<div class="row">
+					<p class="col-lg-10 col-lg-offset-1">
+						<%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-block" %>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
