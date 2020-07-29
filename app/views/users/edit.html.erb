@@ -1,0 +1,19 @@
+  <h2>User info</h2>
+  <%= form_for(@user) do |f| %>
+  	<div class="field" style="margin-bottom: 10px;">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field" style="margin-bottom: 10px;">
+      <%= f.label :Image %>
+      <%= f.attachment_field :profile_image %>
+    </div>
+    <div class="field" style="margin-bottom: 10px;">
+      <%= f.label :introduction %>
+      <%= f.text_area :introduction %>
+    </div>
+    <div class="actions" style="margin-bottom: 10px;">
+      <%= f.submit("Update User") %>
+    </div>
+
+  <% end %>

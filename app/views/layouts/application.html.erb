@@ -20,7 +20,7 @@
               <li><%= link_to home_top_path do %><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home <% end %></li>
               <li>Users</li>
               <li>Books</li>
-              <li><%= link_to destroy_user_session_path do %><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> logout<% end %></li>
+              <li><%= link_to destroy_user_session_path method: :delete do %><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> logout<% end %></li>
             <% else %>
               <li><%= link_to home_top_path do %><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home <% end %></li>
               <li><%= link_to home_about_path do %><span class="glyphicon glyphicon-link" aria-hidden="true"></span> About <% end %></li>
@@ -30,7 +30,14 @@
           </ul>
       </div>
     </header>
-    <%= yield %>
+    <body>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+      <%= yield %>
+    </div>
+    </body>
     <footer>
       <div class="container">
         <div class="row">
