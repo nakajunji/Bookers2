@@ -11,6 +11,7 @@
 					</td>
 					<td><%= link_to book_path(@post_book.id) do %><%= @post_book.title %><% end %></td>
 					<td><%= @post_book.body %></td>
+					<td><%= link_to "Edit", edit_book_path(@post_book.id), class: "btn btn-success" %></td>
 				</tr>
 			</tbody>
 
